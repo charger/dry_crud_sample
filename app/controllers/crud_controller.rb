@@ -119,6 +119,11 @@ class CrudController < ListController
     "#{models_label(false)} <i>#{ERB::Util.h(entry)}</i>".html_safe
   end
 
+  # Find and duplicate entry.
+  def duplicate_entry(options = {})
+    set_model_ivar( find_entry.dup(options)  )
+  end
+
   # Url of the index page to return to
   def index_url
     polymorphic_url(path_args(model_class), :returning => true)
