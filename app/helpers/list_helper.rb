@@ -20,8 +20,7 @@ module ListHelper
   # These are all defined attributes except certain special ones like 'id' or 'position'.
   def default_attrs
     attrs = model_class.column_names.collect(&:to_sym)
-    attrs - [:id, :position, :password]
+    attrs - [:id, :position, :password, :created_at, :updated_at]
   end
-
 
 end
