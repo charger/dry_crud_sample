@@ -1,0 +1,70 @@
+# Translations of all crud strings.
+# See also StandardHelper#translate_inheritable and #translate_association.
+
+ru:
+  # global scope
+  global:
+    "yes": "да"
+    "no": "нет"
+    no_list_entries: Не найдено ни одной строки.
+    confirm_delete: Вы точно хотите удалить эту строку?
+
+    associations:
+      # association keys may be customized per model with the prefix
+      # 'activerecord.associations.{model}.' or even per actual association with
+      # 'activerecord.associations.models.{holder_model}.{assoc_name}.'
+      no_entry: (нет)
+      none_available: (не доступно)
+      please_select: Выберите пожалуйста
+
+    button:
+      save: Сохранить
+      cancel: Отменить
+      search: Поиск
+
+    link:
+      show: Показать
+      edit: Редактировать
+      add: Добавить
+      delete: Удалить
+      list: Список
+      clone: Клонировать
+
+    errors:
+      header:
+        one: "1 ошибка не позволяет сохранить запись:"
+        other: "%{count} ошибок не позволяет сохранить запись:"
+
+  # formats
+  time:
+    formats:
+      time: "%H:%M"
+
+  # list controller
+  list:
+    index:
+      title: Список %{models}
+
+  # crud controller
+  crud:
+    show:
+      title: "%{model}"
+    new:
+      title: "Создание %{model}"
+    edit:
+      title: "Редактирование %{model}"
+    create:
+      flash:
+        success: "%{model} успешно создана."
+    update:
+      flash:
+        success: "%{model} успешно изменена."
+    destroy:
+      flash:
+        success: "%{model} удалена."
+        failure: "Не удалось удалить %{model}."
+
+  filter:
+    actual: По сроку
+    from_app_id: Задания для
+    to_app_id: Награда в
