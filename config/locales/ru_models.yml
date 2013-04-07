@@ -1,0 +1,22 @@
+ru:
+  activerecord:
+    models:
+      post: Пост
+      user: Пользователь
+      posts: Посты
+      users: Пользователи
+
+    attributes:
+      post:
+        content: Текст
+        is_draft: Черновик?
+        title: Титул
+        user: :activerecord.models.user
+        user_id: Автор
+
+      user:
+        email: E-mail
+        name: Имя
+        pass: Пароль
+        posts: Посты
+        created_at: Зарегистрирован
