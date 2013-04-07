@@ -75,6 +75,12 @@ module CrudHelper
     end
   end
 
+  def action_col_clone(table, &block)
+    action_col(table) do |e|
+      link_table_action('list-alt', action_path(e, &block))
+    end
+  end
+
   # Action link to edit inside a table.
   # A block may be given to define the link path for the row entry.
   def action_col_edit(table, &block)

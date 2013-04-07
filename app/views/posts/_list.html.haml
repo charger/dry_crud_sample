@@ -1,0 +1,3 @@
+= crud_table :user, :title, :content, :is_draft do |t|
+  - action_col_clone t do |e|
+    - clone_post_path e

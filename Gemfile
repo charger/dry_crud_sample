@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '1.9.3'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -26,6 +26,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'deep_cloneable', '~> 1.5.0'
 
 group :development do
   gem 'i18n_generators'
