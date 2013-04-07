@@ -1,0 +1,44 @@
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : "DRY CRUD example"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    / Le styles
+    :css
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    = stylesheet_link_tag 'application', :media => 'all'
+    / Le fav and touch icons
+    %link{:href => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css', :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/assets/favicon.ico", :rel => "shortcut icon"}/
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = render partial:'layouts/nav'
+
+    .container
+      .content
+        .row
+          = render :partial => 'layouts/flash', :collection => [:notice, :alert, :error, :success], :as => :level
+          .span10
+            .actions.btn-toolbar
+              .pull-right= yield :actions
+              .pull-left= yield :tools
+            = yield
+
+            %hr
+          .span1 &nbsp;
+          - if content_for?(:sidebar)
+            = yield(:sidebar)
+      %footer
+        %p &copy; Charger 2013
+
+    = javascript_include_tag 'application'
+    - if content_for?(:javascript)
+      = yield(:javascript)
